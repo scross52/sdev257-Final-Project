@@ -1,9 +1,9 @@
 {
   "expo": {
-    "name": "Sdev Final Project",
-    "slug": "sdev257-final-project",
+    "name": "Movie App",
+    "slug": "movie-app",
     "version": "1.0.0",
-    "sdkVersion": "54.0.0",
+    "sdkVersion": "51.0.0",
     "platforms": ["ios", "android", "web"],
     "entryPoint": "App.js"
   }

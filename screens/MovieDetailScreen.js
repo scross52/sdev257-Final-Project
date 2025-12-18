@@ -12,6 +12,7 @@ export default function MovieDetailScreen({ route }) {
   );
 }
 
+// Styles
 const styles = StyleSheet.create({
   container: {
     flex: 1,

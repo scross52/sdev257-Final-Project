@@ -1,21 +1,49 @@
-import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
+import { View, Text, TouchableOpacity, StyleSheet, Image } from "react-native";
+
+const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500";
 
 export default function MovieCard({ movie, onPress }) {
   return (
     <TouchableOpacity style={styles.card} onPress={onPress}>
-      <Text style={styles.title}>{movie.title}</Text>
-      <Text>Rating: {movie.vote_average}</Text>
+      <Image
+        source={{ uri: `${IMAGE_BASE_URL}${movie.poster_path}` }}
+        style={styles.poster}
+      />
+
+      <View style={styles.info}>
+        <Text style={styles.title} numberOfLines={2}>
+          {movie.title}
+        </Text>
+        <Text style={styles.rating}>⭐ {movie.vote_average}</Text>
+      </View>
     </TouchableOpacity>
   );
 }
 
 const styles = StyleSheet.create({
   card: {
-    padding: 12,
-    borderBottomWidth: 1
+    flex: 1,
+    margin: 6,
+    backgroundColor: "#fff",
+    borderRadius: 8,
+    overflow: "hidden",
+    elevation: 2,
+  },
+  poster: {
+    width: "100%",
+    aspectRatio: 2 / 3,
+    resizeMode: "contain", 
+    backgroundColor: "#000",
+  },
+  info: {
+    padding: 6,
   },
   title: {
-    fontSize: 18,
-    fontWeight: "bold"
-  }
+    fontSize: 12,
+    fontWeight: "bold",
+  },
+  rating: {
+    marginTop: 2,
+    fontSize: 11,
+  },
 });
